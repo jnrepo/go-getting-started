@@ -2,13 +2,13 @@ package main
 
 import (
 	"bytes"
-	"database/sql"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"time"
+	"database/sql"
 
 	"github.com/jnrepo/go-getting-started/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	_ "github.com/jnrepo/go-getting-started/Godeps/_workspace/src/github.com/lib/pq"
@@ -76,7 +76,7 @@ func main() {
 		repeat = 5
 	}
 
-	db, errd = sql.Open("posgres", os.Getenv("DATABASE_URL"))
+	db, errd = sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if errd != nil {
 		log.Fatalf("Error opening datbase: %q", errd)
 	}
